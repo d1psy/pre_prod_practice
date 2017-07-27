@@ -1,0 +1,17 @@
+<Context>
+    <Resource name="jdbc/gretong"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="50" maxIdle="10" maxWait="10000"
+              username="root" password="root"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              defaultAutoCommit="false"
+              defaultTransactionIsolation="READ_COMMITTED"
+              factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+              url="jdbc:mysql://localhost:3306/gretong?autoReconnect=true"
+              connectionProperties="useUnicode=yes;
+                characterEncoding=utf8;
+                useJDBCCompliantTimezoneShift=true;
+                useLegacyDateTimeCode=false;
+                serverTimezone=UTC"/>
+</Context>

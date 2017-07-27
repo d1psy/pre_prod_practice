@@ -1,0 +1,38 @@
+group 'web_shop'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+apply plugin: 'java'
+compileJava {
+    sourceCompatibility = '1.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+    compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.24'
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version:'1.2.2'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+
+gretty {
+    httpPort = 8080
+    contextPath = '/'
+    servletContainer = 'tomcat8'
+}
